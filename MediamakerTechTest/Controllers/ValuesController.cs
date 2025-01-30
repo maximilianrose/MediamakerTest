@@ -1,4 +1,5 @@
 ﻿using Azure;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Graph;
 using System.Net;
@@ -28,6 +29,8 @@ namespace MediamakerTechTest.Controllers
             return new string[] { "value1", "value2" };
         }
 
+
+        [Authorize]
         [HttpPost]
         [Route("api/HomeController/CalculateSum")]
         public IActionResult CalculateSum([FromBody] UserCalcRequest request)
