@@ -1,7 +1,9 @@
 ﻿using Azure;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Graph;
+using System;
 using System.Net;
 using static Microsoft.AspNetCore.Http.HttpRequest;
 
@@ -14,13 +16,15 @@ namespace MediamakerTechTest.Controllers
     public class ValuesController : ControllerBase
     {
         private readonly ICalcService _calcService;
+        private readonly ILoggingService _loggingService;
+        private readonly RequestDbContext _dbContext;
 
-        public ValuesController(ICalcService calcService)
+        public ValuesController(ICalcService calcService, ILoggingService loggingService, RequestDbContext dbContext)
         {
             _calcService = calcService;
+            _loggingService = loggingService;
+            _dbContext = dbContext;
         }
-
-
 
         // GET: api/<ValuesController>
         [HttpGet]
@@ -29,10 +33,9 @@ namespace MediamakerTechTest.Controllers
             return new string[] { "value1", "value2" };
         }
 
-
         [Authorize]
         [HttpPost]
-        [Route("api/HomeController/CalculateSum")]
+        [Route("api/ValuesController/CalculateSum")]
         public IActionResult CalculateSum([FromBody] UserCalcRequest request)
         {
             var response = new UserCalcResponse();
@@ -40,16 +43,26 @@ namespace MediamakerTechTest.Controllers
 
             try
             {
+                _loggingService.LogRequest(request);
+
                 response = _calcService.GetUserCalcResponse(request);
             }
             catch (Exception ex)
             {
-
                 return BadRequest(new { error = "Bad Request" });
-
             }
             return Ok(response);
         }
+
+
+        [HttpGet]
+        [Route("api/ValuesController/QueryLogs")]
+        public async Task<ActionResult<IEnumerable<RequestLog>>> QueryLogTable()
+        {
+            var logs = await _dbContext.RequestLogs.ToListAsync();
+            return Ok(logs);
+        }
+
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]

@@ -1,7 +1,9 @@
 using MediamakerTechTest;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,7 +36,18 @@ builder.Services.AddAuthorization();
 
 builder.Services.AddScoped<ICalcService, CalcService>();
 
+builder.Services.AddDbContext<RequestDbContext>(options =>
+    options.UseSqlite("Data Source=requests.db"));
+
+builder.Services.AddScoped<ILoggingService, LoggingService>();
+
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<RequestDbContext>();
+    dbContext.Database.EnsureCreated();
+}
 
 app.UseAuthentication();
 app.UseAuthorization();

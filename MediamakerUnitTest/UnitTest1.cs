@@ -9,12 +9,14 @@ namespace MediamakerUnitTest
     public class UnitTest1
     {
         private readonly Mock<ICalcService> _calcService;
+        private readonly Mock<ILoggingService> _loggingService;
         private readonly ValuesController _controller;
 
         public UnitTest1()
         {
             _calcService = new Mock<ICalcService>();
-            _controller = new ValuesController(_calcService.Object);
+            _loggingService = new Mock<ILoggingService>();
+            _controller = new ValuesController(_calcService.Object, _loggingService.Object);
         }
 
         [Fact]

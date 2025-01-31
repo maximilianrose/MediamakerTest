@@ -12,7 +12,6 @@ namespace MediamakerTechTest.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-
         private readonly string _key = "MediamakerAuthenticationKeyExample123456789";
 
         // GET: api/<AuthenticationController>
@@ -29,11 +28,7 @@ namespace MediamakerTechTest.Controllers
             return "value";
         }
 
-
-        
-
         [HttpPost("token")]
-
         public IActionResult GenerateToken()
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -56,11 +51,6 @@ namespace MediamakerTechTest.Controllers
 
             return Ok(new { Token = tokenString });
         }
-
-
-
-
-
 
         // POST api/<AuthenticationController>
         [HttpPost]
