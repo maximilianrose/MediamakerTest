@@ -1,0 +1,231 @@
+{
+  "info": {
+    "_postman_id": "e3a4eb3c-601f-4555-b15c-3cf501a4a7b9",
+    "name": "MediamakerApiCollection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41654654"
+  },
+  "item": [
+    {
+      "name": "GetToken",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:44376/api/Authentication/token",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44376",
+          "path": [
+            "api",
+            "Authentication",
+            "token"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3RVc2VyIiwibmJmIjoxNzM4MzEzMDExLCJleHAiOjE3MzgzMTY2MTEsImlhdCI6MTczODMxMzAxMSwiaXNzIjoiTWVkaWFNYWtlckFwaSIsImF1ZCI6Ik1lZGlhTWFrZXJBcGlVc2VycyJ9.bqzLbUHjHB9beXPI8lisAtJrb-EpAzgllh8VJpxwano",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Operation\":\"add\",\r\n    \"FirstNumber\":67,\r\n    \"SecondNumber\":7\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:44376/api/Values/api/ValuesController/CalculateSum",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44376",
+          "path": [
+            "api",
+            "Values",
+            "api",
+            "ValuesController",
+            "CalculateSum"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Subtract",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3RVc2VyIiwibmJmIjoxNzM4MzEzMDExLCJleHAiOjE3MzgzMTY2MTEsImlhdCI6MTczODMxMzAxMSwiaXNzIjoiTWVkaWFNYWtlckFwaSIsImF1ZCI6Ik1lZGlhTWFrZXJBcGlVc2VycyJ9.bqzLbUHjHB9beXPI8lisAtJrb-EpAzgllh8VJpxwano",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Operation\":\"subtract\",\r\n    \"FirstNumber\":10,\r\n    \"SecondNumber\":7\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:44376/api/Values/api/ValuesController/CalculateSum",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44376",
+          "path": [
+            "api",
+            "Values",
+            "api",
+            "ValuesController",
+            "CalculateSum"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Multiply",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3RVc2VyIiwibmJmIjoxNzM4MzE4NDA1LCJleHAiOjE3MzgzMjIwMDUsImlhdCI6MTczODMxODQwNSwiaXNzIjoiTWVkaWFNYWtlckFwaSIsImF1ZCI6Ik1lZGlhTWFrZXJBcGlVc2VycyJ9.QowBNohiRGtvwCMbQ15pK1HLIj68mP2peAFBawTENJ8",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Operation\":\"multiply\",\r\n    \"FirstNumber\":90,\r\n    \"SecondNumber\":7\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:44376/api/Values/api/ValuesController/CalculateSum",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44376",
+          "path": [
+            "api",
+            "Values",
+            "api",
+            "ValuesController",
+            "CalculateSum"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Divide",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3RVc2VyIiwibmJmIjoxNzM4MzEzMDExLCJleHAiOjE3MzgzMTY2MTEsImlhdCI6MTczODMxMzAxMSwiaXNzIjoiTWVkaWFNYWtlckFwaSIsImF1ZCI6Ik1lZGlhTWFrZXJBcGlVc2VycyJ9.bqzLbUHjHB9beXPI8lisAtJrb-EpAzgllh8VJpxwano",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"Operation\":\"divide\",\r\n    \"FirstNumber\":30,\r\n    \"SecondNumber\":6\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://localhost:44376/api/Values/api/ValuesController/CalculateSum",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44376",
+          "path": [
+            "api",
+            "Values",
+            "api",
+            "ValuesController",
+            "CalculateSum"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "QueryLogs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://localhost:44376/api/Values/api/ValuesController/QueryLogs",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "44376",
+          "path": [
+            "api",
+            "Values",
+            "api",
+            "ValuesController",
+            "QueryLogs"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
