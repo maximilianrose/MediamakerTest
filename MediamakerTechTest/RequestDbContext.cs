@@ -5,11 +5,11 @@ namespace MediamakerTechTest
 {
     public class RequestDbContext : DbContext
     {
-
-
         public DbSet<RequestLog> RequestLogs { get; set; }
 
-        public RequestDbContext(DbContextOptions<RequestDbContext> options) : base(options) { }
+        public RequestDbContext(DbContextOptions<RequestDbContext> options) : base(options)
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,8 +18,5 @@ namespace MediamakerTechTest
                 optionsBuilder.UseSqlite("Data Source=requests.db");
             }
         }
-
-
-
     }
 }

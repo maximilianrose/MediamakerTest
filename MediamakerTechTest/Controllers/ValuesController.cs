@@ -54,7 +54,6 @@ namespace MediamakerTechTest.Controllers
             return Ok(response);
         }
 
-
         [HttpGet]
         [Route("api/ValuesController/QueryLogs")]
         public async Task<ActionResult<IEnumerable<RequestLog>>> QueryLogTable()
@@ -62,7 +61,6 @@ namespace MediamakerTechTest.Controllers
             var logs = await _dbContext.RequestLogs.ToListAsync();
             return Ok(logs);
         }
-
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]

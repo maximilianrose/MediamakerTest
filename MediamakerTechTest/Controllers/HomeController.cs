@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Graph;
-using System.Net;
-using static Microsoft.AspNetCore.Http.HttpRequest;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace MediamakerTechTest.Controllers
 {
